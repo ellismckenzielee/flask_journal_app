@@ -1,0 +1,2 @@
+This app will be a journal that uses the flask library and sqlite to 
+store and display journal data. 
