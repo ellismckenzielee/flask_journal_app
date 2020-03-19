@@ -1,6 +1,7 @@
 from journal_app import app
+from flask import render_template
 
 @app.route('/')
 def home():
-    return 'Hello App'
+    return render_template('index.html')
     
