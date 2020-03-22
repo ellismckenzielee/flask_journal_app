@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from glob import glob
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
@@ -23,6 +24,7 @@ if new_content:
             for line in f.readlines():
                 print('LINE', line)
                 contents += line
+        os.remove(content)
         print(contents)
 
         new_post = models.Post(title=title, content=content)
