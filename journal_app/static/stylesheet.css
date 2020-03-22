@@ -1,7 +1,5 @@
-navbar {
-    background-color: red;
-}
-
-h1 {
-    color: red;
+#title {
+    font-family: 'Shadows Into Light', cursive;
+    margin: auto;
+    text-align: center;
 }
