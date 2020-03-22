@@ -17,6 +17,10 @@ header {
     font-weight: bold;
 }
 
+.post-content {
+    color: #AC3B61;
+}
+
 .container {
     text-align: center;
 }
