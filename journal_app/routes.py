@@ -7,4 +7,4 @@ def home():
     posts = Post.query.all()
     print(Post)
     return render_template('index.html', posts=posts)
-    
+
