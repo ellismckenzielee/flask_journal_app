@@ -1,6 +1,8 @@
 from journal_app import app, db
 from journal_app.models import Post
-from flask import render_template
+from journal_app.forms import PostForm
+from flask import render_template, redirect, request, url_for
+
 
 @app.route('/')
 def home():
@@ -14,3 +16,19 @@ def detail(id):
     print('hi')
     return render_template('detail.html', post=post)
 
+
+@app.route('/<id>/edit',methods=['GET', 'POST'])
+def edit(id):
+    if request.method=="POST":
+        form = request.form
+        print(form)
+        post = Post.query.get(id)
+        post.content = form['content']
+        print(post.title, post.content)
+        return redirect(url_for('detail', id=post.id))
+
+    form = PostForm()
+    post = Post.query.get(id)
+    if form.validate_on_submit():
+        print('validated_form')
+    return render_template('edit.html', form=form, post=post)
