@@ -25,6 +25,7 @@ def edit(id):
         post = Post.query.get(id)
         post.content = form['content']
         print(post.title, post.content)
+        db.session.commit()
         return redirect(url_for('detail', id=post.id))
 
     form = PostForm()
@@ -32,3 +33,10 @@ def edit(id):
     if form.validate_on_submit():
         print('validated_form')
     return render_template('edit.html', form=form, post=post)
+
+@app.route('/<id>/delete',methods=['GET', 'DELETE'])
+def delete(id):
+    post = Post.query.get(id)
+    db.session.delete(post)
+    db.session.commit()
+    return redirect(url_form('home'))
