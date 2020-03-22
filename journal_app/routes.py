@@ -10,6 +10,21 @@ def home():
     print(Post)
     return render_template('index.html', posts=posts)
 
+@app.route('/create', methods=['GET', 'POST'])
+def create():
+    if request.method == 'GET':
+        form = PostForm()
+        return render_template('create.html', form=form)
+    elif request.method == 'POST':
+        form = request.form
+        title = form['title']
+        content = form['content']
+        post = Post(title=title, content=content)
+        db.session.add(post)
+        db.session.commit()
+        print('IDDDDD', content)
+        return redirect(url_for('detail', id=post.id))
+
 @app.route('/<id>',methods=['GET','POST'])
 def detail(id):
     post = Post.query.get(id)

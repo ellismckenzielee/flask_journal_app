@@ -11,15 +11,15 @@
             <div class="container">
                 <h1 id="title">
                     Journell
-                </h1>   
+                </h1>  
+                </br>
+                <a class="btn btn-light" href="{{ url_for('create') }}">Add New </a>
             </div>
         </header>        
 
         <div class="container">
-            <div class="d-flex flex-row justify-content-center flex-wrap">
-                    {% block content %}
-                    {% endblock %} 
-            </div>
+                {% block content %}
+                {% endblock %} 
         </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

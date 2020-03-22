@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
     {% block content %}
         <h1> {{post.title }} </h1>
+        </br>
         <p> {{post.content }} </p>
+        </br>
         <a  href="{{ url_for('home', id=post.id) }}", class="btn btn-info">Home</a>
         <a  href="{{ url_for('edit', id=post.id) }}", class="btn btn-secondary">Edit</a>
         <a  href="{{ url_for('delete', id=post.id) }}", class="btn btn-danger">Delete</a>
