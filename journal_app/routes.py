@@ -39,4 +39,4 @@ def delete(id):
     post = Post.query.get(id)
     db.session.delete(post)
     db.session.commit()
-    return redirect(url_form('home'))
+    return redirect(url_for('home'))
