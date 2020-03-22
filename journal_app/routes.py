@@ -8,7 +8,7 @@ def home():
     print(Post)
     return render_template('index.html', posts=posts)
 
-@app.route('/<id>')
+@app.route('/<id>',methods=['GET','POST'])
 def detail(id):
     post = Post.query.get(id)
     print('hi')
