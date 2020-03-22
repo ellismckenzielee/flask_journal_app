@@ -3,5 +3,6 @@
         {% for post in posts %}
             <h3 class="post-title"> {{ post.title }}</h3>
             <p class='post-content'>{{ post.content }}</p>
+            <a  href="{{ url_for('detail', id=post.id) }}", class="btn btn-info">See More</a>
         {% endfor %}
     {% endblock %}
