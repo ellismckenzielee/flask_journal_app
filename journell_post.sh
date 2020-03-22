@@ -14,4 +14,4 @@ then
 fi
 
 touch "journal_app/new_content/$title.txt"
-echo "journal_app/new_content/$content" >> $title.txt
+echo "$content" >> "journal_app/new_content/$title.txt"

@@ -37,6 +37,6 @@ if new_content:
                 contents += line
         os.remove(content)
 
-        new_post = models.Post(title=title, content=content)
+        new_post = models.Post(title=title, content=contents)
         db.session.add(new_post)
         db.session.commit()
