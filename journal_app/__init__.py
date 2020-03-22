@@ -9,4 +9,5 @@ db = SQLAlchemy(app)
 
 
 
+
 from journal_app import routes, models
