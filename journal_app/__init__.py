@@ -17,5 +17,14 @@ if new_content:
     for content in new_content:
         title = content.split('/')[-1]
         title = title.split('.')[0]
-        print(title)
+        print('CONTENT', content)
+        contents = ":"
+        with open(content, "r") as f:
+            for line in f.readlines():
+                print('LINE', line)
+                contents += line
+        print(contents)
 
+        new_post = models.Post(title=title, content=content)
+        db.session.add(new_post)
+        db.session.commit()
